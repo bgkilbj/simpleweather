@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+        android:background="#00323232"
+    
+    android:orientation="vertical" >
+    <TextView
+        android:id="@+id/middler_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="周五"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+    <ImageView
+        android:id="@+id/middler_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_below="@id/middler_title"
+        android:layout_centerHorizontal="true"
+        
+        android:src="@drawable/weather_small_normal"/>
+
+    <TextView
+        android:id="@+id/middler_temp1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/middler_image"
+        android:layout_alignLeft="@id/middler_image"
+        android:textColor="@android:color/white"
+        android:text="13/" />
+    <TextView
+        android:id="@+id/middler_temp2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/middler_image"
+        android:layout_toRightOf="@id/middler_temp1"
+        android:textColor="@android:color/white"
+        android:text="19℃" />
+
+    <TextView
+        android:id="@+id/middler_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/middler_temp1"
+        android:layout_marginLeft="10dip"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:text="多云" 
+        android:paddingBottom="5dp"/>
+    
+
+</RelativeLayout>

@@ -5,77 +5,73 @@
     android:layout_height="fill_parent"
     android:background="#fcfcfc"
     android:orientation="vertical" >
-    
-   	<LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="vertical" >
 
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="40dp"
-                    android:background="@drawable/settings_first_item"
-                    android:clickable="true"
-                    android:drawableRight="@drawable/mm_submenu_normal"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="25dp"
-                    android:text="自动更新天气"
-                    android:textColor="#000"
-                    android:textSize="16sp" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical" >
 
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="40dp"
-                    android:background="@drawable/settings_nomal_item"
-                    android:clickable="true"
-                    android:drawableRight="@drawable/mm_submenu_normal"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="25dp"
-                    android:text="通知栏设置"
-                    android:textColor="#000"
-                    android:textSize="16sp" />
 
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="40dp"
-                    android:background="@drawable/settings_nomal_item"
-                    android:clickable="true"
-                    android:drawableRight="@drawable/mm_submenu_normal"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="25dp"
-                    android:text="GPS定位"
-                    android:textColor="#000"
-                    android:textSize="16sp" />
+        <TextView
+            android:id="@+id/setting_auto_update"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/settings_first_item"
+            android:clickable="true"
+            android:drawableRight="@drawable/toggle_off"
+            android:gravity="center_vertical"
+            android:paddingLeft="25dp"
+            android:text="自动更新天气"
+            android:textColor="#000"
+            android:textSize="20sp" />
 
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="40dp"
-                    android:background="@drawable/settings_last_item"
-                    android:clickable="true"
-                    android:drawableRight="@drawable/mm_submenu_normal"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="25dp"
-                    android:text="检查更新"
-                    android:textColor="#000"
-                    android:textSize="16sp" />
-            </LinearLayout>
-<LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="vertical" >
+        <TextView
+            android:id="@+id/setting_interval"            
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/settings_nomal_item"
+            android:clickable="false"
+            android:gravity="center_vertical"
+            android:paddingLeft="25dp"
+            android:text="更新间隔"
+            android:textColor="#000"
+            android:textSize="20sp" />
+        
+        
+        <TextView
+            android:id="@+id/setting_notification"                       
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/settings_last_item"
+            android:clickable="true"
+            android:drawableRight="@drawable/toggle_off"
+            android:gravity="center_vertical"
+            android:paddingLeft="25dp"
+            android:text="通知栏设置"
+            android:textColor="#000"
+            android:textSize="20sp" />
 
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="40dp"
-                    android:background="@drawable/exit_item"
-                    android:clickable="true"
-                    android:drawableRight="@drawable/mm_submenu_normal"
-                    android:gravity="center_vertical"
-                    android:paddingLeft="25dp"
-                    android:text="退出"
-                    android:textColor="#000"
-                    android:textSize="16sp" />
-            </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/exit_item"
+            android:clickable="true"
+            android:drawableRight="@drawable/mm_submenu_normal"
+            android:gravity="center_vertical"
+            android:paddingLeft="25dp"
+            android:text="退出"
+            android:textColor="#000"
+            android:textSize="20sp" />
+    </LinearLayout>
+
 </LinearLayout>

@@ -5,6 +5,7 @@ import java.util.List;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
 
 public class SysApplication extends Application {
 	private List<Activity> mList = new LinkedList<Activity>();
@@ -16,6 +17,7 @@ public class SysApplication extends Application {
 	public synchronized static SysApplication getInstance() {
 		if (null == instance) {
 			instance = new SysApplication();
+
 		}
 		return instance;
 	}
@@ -24,6 +26,7 @@ public class SysApplication extends Application {
 	public void addActivity(Activity activity) {
 		mList.add(activity);
 	}
+
 
 	public void exit() {
 		try {

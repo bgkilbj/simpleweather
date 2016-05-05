@@ -6,6 +6,7 @@ import java.util.List;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -58,7 +59,6 @@ public class MainFragment extends Fragment{
 			
 			@Override
 			public int getItemPosition(Object object) {
-				// TODO Auto-generated method stub
 				return  POSITION_NONE;
 			}
 
@@ -104,10 +104,10 @@ public class MainFragment extends Fragment{
 			
 			for (int i=0;i<mFragments.size();i++){
                 //将所有的圆点设置为为选中时候的图片
-                mDots.get(i).setImageResource(R.drawable.dot_normal1);
+                mDots.get(i).setImageResource(R.drawable.dot_normal);
             }
             //将被选中的图片中的圆点设置为被选中的时候的图片
-            mDots.get(arg0).setImageResource(R.drawable.dot_selected1);
+            mDots.get(arg0).setImageResource(R.drawable.dot_selected);
         	mCityNameTextView=(TextView)getActivity().findViewById(R.id.city_name_textview);
         	mCityNameTextView.setText(mFragments.get(arg0).name);
 
@@ -116,13 +116,11 @@ public class MainFragment extends Fragment{
 		
 		@Override
 		public void onPageScrolled(int arg0, float arg1, int arg2) {
-			// TODO Auto-generated method stub
 			
 		}
 		
 		@Override
 		public void onPageScrollStateChanged(int arg0) {
-			// TODO Auto-generated method stub
 			
 		}
 	});
@@ -275,11 +273,12 @@ public class MainFragment extends Fragment{
 			ImageView imageView = new ImageView(getActivity());
 			imageView.setLayoutParams(new ViewGroup.LayoutParams(35, 35));// 设置ImageView的宽度和高度
 			imageView.setPadding(0, 0, 0, 0);// 设置圆点的Padding，与周围的距离
-			imageView.setImageResource(R.drawable.dot_normal1);// 设置图片
+			imageView.setImageResource(R.drawable.dot_normal);// 设置图片
 			mDots.add(imageView);// 将该图片添加到圆点集合中
 			mLinearLayout.addView(imageView);// 将图片添加到LinearLayout中
+			mLinearLayout.setBackgroundColor(Color.parseColor("#40000000"));
 		}
-		mDots.get(0).setImageResource(R.drawable.dot_selected1);//dot_selected1
+		mDots.get(0).setImageResource(R.drawable.dot_selected);//dot_selected1
 	}
 	
 }

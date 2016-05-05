@@ -80,9 +80,9 @@ public class ChooseActivity extends Activity {
 		                 
 		    if (mDataBaseOperator.isExist()) {// 若表中数据为空，则执行插入。  
 		        try {  
-		        	showProgressDialog();
+		        	//showProgressDialog();
 		        	mDataBaseOperator.initInsert(this);// 插入初始化数据  
-		        	closeProgressDialog();
+		        	//closeProgressDialog();
 		        } catch (IOException e) {  
 		            e.printStackTrace();  
 		        }  
@@ -192,26 +192,26 @@ public class ChooseActivity extends Activity {
 //		});
 	}
 	
-	/**
-	 * 显示进度对话框
-	 */
-	private void showProgressDialog() {
-		if (progressDialog == null) {
-			progressDialog = new ProgressDialog(this);
-			progressDialog.setMessage("正在加载...");
-			progressDialog.setCanceledOnTouchOutside(false);
-		}
-		progressDialog.show();
-	}
-
-	/**
-	 * 关闭进度对话框
-	 */
-	private void closeProgressDialog() {
-		if (progressDialog != null) {
-			progressDialog.dismiss();
-		}
-	}
+//	/**
+//	 * 显示进度对话框
+//	 */
+//	private void showProgressDialog() {
+//		if (progressDialog == null) {
+//			progressDialog = new ProgressDialog(this);
+//			progressDialog.setMessage("正在加载...");
+//			progressDialog.setCanceledOnTouchOutside(false);
+//		}
+//		progressDialog.show();
+//	}
+//
+//	/**
+//	 * 关闭进度对话框
+//	 */
+//	private void closeProgressDialog() {
+//		if (progressDialog != null) {
+//			progressDialog.dismiss();
+//		}
+//	}
 	
 	@Override
 	public void onBackPressed()

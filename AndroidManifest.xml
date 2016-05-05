@@ -7,7 +7,9 @@
     <uses-sdk
         android:minSdkVersion="17"
         android:targetSdkVersion="17" />
+
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -23,9 +25,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:launchMode="singleTask"
-            
-            android:name="com.simpleweather.app.activity.MainActivity"/>
+            android:name="com.simpleweather.app.activity.MainActivity"
+            android:launchMode="singleTask" />
+
+        <service android:name="com.simpleweather.app.service.AutoUpdateService" >
+        </service>
+
+        <receiver android:name="com.simpleweather.app.receiver.AutoUpdateReceiver" >
+        </receiver>
     </application>
 
 </manifest>

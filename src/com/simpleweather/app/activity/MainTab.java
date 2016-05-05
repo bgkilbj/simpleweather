@@ -1,6 +1,9 @@
 package com.simpleweather.app.activity;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -134,13 +137,11 @@ public class MainTab extends Fragment
 		//name=prefs.getString("city_name", "");
 		//header内容
 		String str=prefs.getString("loc", "");
+		String tmpweathercode=prefs.getString("0c", "");
 		items.get(0).setTemp2("发布时间: "+str.substring(5,str.length()));//发布时间
 		items.get(0).setDescription(prefs.getString("txt", ""));//天气情况
-		if((prefs.getString("txt", "")).equals("阵雨"))//根据天气改变mainactivity的背景
-		{
-			(getActivity().findViewById(R.id.main_activity)).setBackgroundResource(R.drawable.rain_night);
-			
-		}
+
+		changeBack(tmpweathercode);
 		items.get(0).setTitle(prefs.getString("tmp", "")+"°");//温度
 		items.get(0).setTemp1(prefs.getString("dir", "")+":"+prefs.getString("sc", "")+"级");//风向及风力
 
@@ -187,8 +188,9 @@ public class MainTab extends Fragment
 		weathercode[3]=prefs.getString("3c", "");
 		weathercode[4]=prefs.getString("4c", "");
 
-		
+		changeHeaderImg(weathercode[0]);
 		changeImg(weathercode);
+
 	}
 	
 	 private void initDatas() {
@@ -261,16 +263,56 @@ public class MainTab extends Fragment
 
 	    }
 	 
+	 private void changeBack(String tmpweathercode)
+	 {
+			if(tmpweathercode.equals("100"))//根据天气改变mainactivity的背景
+			{
+				(getActivity().findViewById(R.id.main_activity)).setBackgroundResource(R.drawable.sunny);			
+			}
+			else if(tmpweathercode.equals("101")||tmpweathercode.equals("102")||tmpweathercode.equals("103")){
+				(getActivity().findViewById(R.id.main_activity)).setBackgroundResource(R.drawable.cloudy);
+			}
+			else if (tmpweathercode.equals("104")) {
+				(getActivity().findViewById(R.id.main_activity)).setBackgroundResource(R.drawable.overcast);
+
+			}
+			else if ((tmpweathercode.substring(0,1)).equals("3")) {
+				(getActivity().findViewById(R.id.main_activity)).setBackgroundResource(R.drawable.rainy);
+			}
+			else {
+				(getActivity().findViewById(R.id.main_activity)).setBackgroundResource(R.drawable.cloudy);
+
+			}
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHH",
+					Locale.CHINA);
+			String time=sdf.format(new Date());
+			int tmp=Integer.valueOf(time.substring(8,10)).intValue();
+			if (tmp>19||tmp<6) {
+				(getActivity().findViewById(R.id.main_activity)).setBackgroundResource(R.drawable.night);
+
+			}
+	 }
+	 
 	 private void changeImg(String[] weathercode)
 	 {
-		 for(int i=0;i<5;i++)
+		 for(int i=1;i<5;i++)
 		 {
-			 String imgname = "c"+weathercode[i];
+			 String imgname = "mhc"+weathercode[i];
 			 int imgid = getResources().getIdentifier(imgname, "drawable", "com.simpleweather.app");
 			 items.get(i).setImg(imgid);
 		 }
 			 
 	 }
+	 private void changeHeaderImg(String weathercode)
+	 {
+		 
+			 String imgname = "hc"+weathercode;
+			 int imgid = getResources().getIdentifier(imgname, "drawable", "com.simpleweather.app");
+			 items.get(0).setImg(imgid);
+		 
+			 
+	 } 
+	 
 	 
 	 private void initViews(View v) {
 

@@ -3,7 +3,7 @@
     android:id="@+id/recyclerview_header"
     android:layout_width="fill_parent"
     android:layout_height="300dp"
-    android:background="#00323232"
+    android:background="#40000000"
     android:orientation="vertical" >
 
     <ImageView
@@ -13,13 +13,14 @@
                 android:layout_marginTop="80dp"
         
         android:layout_marginLeft="80dp"
-        android:src="@drawable/weather_normal" />
+        android:src="@drawable/hc100" />
 
     <TextView
         android:id="@+id/header_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
                 android:paddingLeft="5dp"
+                        android:paddingBottom="15dp"
         
         android:layout_toRightOf="@id/header_image"
                 android:layout_alignBottom="@id/header_image"
@@ -35,9 +36,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/header_image"
         android:layout_alignRight="@id/header_image"
-        android:gravity="center"
         android:paddingTop="6dp"
-                android:paddingRight="11dp"
+                android:paddingRight="24dp"
         
         android:text="多云"
         android:textColor="#FFF"

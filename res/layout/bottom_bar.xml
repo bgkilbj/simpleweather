@@ -10,7 +10,8 @@
         android:layout_width="fill_parent"
         android:layout_height="65dp"
          >
-
+       
+        
         <LinearLayout
             android:id="@+id/id_tab_bottom_weather"
             android:layout_width="0dp"

@@ -61,8 +61,8 @@ public class DataBaseOperator {
 
 		try {
 			// 创建模糊查询的条件
-//		String sql="select * from county where county_name like '"+ countyname+"%'";
-			String sql="select * from county where id like '"	+ countyname+"%'";
+		String sql="select * from county where county_name like '"+ countyname+"%'";
+		//String sql="select * from county where id like '"	+ countyname+"%'";
 			cursor = db.rawQuery(sql, null);
 			if (cursor.moveToFirst()) {
 				do {
@@ -108,7 +108,7 @@ public class DataBaseOperator {
 	
 	public void initInsert(Context mcontext) throws IOException {  
 	     
-		 InputStreamReader reader = new InputStreamReader( mcontext.getResources().openRawResource(R.raw.inital));  
+		 InputStreamReader reader = new InputStreamReader( mcontext.getResources().openRawResource(R.raw.a)); //R.raw.intial 
 		    BufferedReader br = new BufferedReader(reader);  
 		    String s1 = "";  
 		     //通过事务，进行批量插入  

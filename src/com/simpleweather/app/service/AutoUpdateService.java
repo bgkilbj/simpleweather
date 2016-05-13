@@ -35,8 +35,11 @@ public class AutoUpdateService extends Service {
 				updateWeather();
 			}
 		}).start();
+		//settingtab与autoupdatereceiver的intent中hasCategory,MyAppWidgetProvider中的无
+	    //if (intent.hasCategory(Intent.CATEGORY_ALTERNATIVE)) {  
+
 		manager = (AlarmManager) getSystemService(ALARM_SERVICE);
-		//int anHour = 20 * 1000; // 这是20s的毫秒数
+
 		SharedPreferences prefs = AutoUpdateService.this.getSharedPreferences("setting",0);
 		int interval = prefs.getInt("interval", 3);
 
@@ -44,6 +47,7 @@ public class AutoUpdateService extends Service {
 		Intent i = new Intent(this, AutoUpdateReceiver.class);
 		PendingIntent pi = PendingIntent.getBroadcast(this, 0, i, 0);
 		manager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, triggerAtTime, pi);
+		//}
 		return super.onStartCommand(intent, flags, startId);
 	}
 

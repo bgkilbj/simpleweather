@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.LayoutInflater;
@@ -25,7 +26,7 @@ public class MainFragment extends Fragment{
 
 	public List<MainTab> mFragments= new ArrayList<MainTab>();
 	public ViewPager mViewPager;
-	private FragmentPagerAdapter mAdapter;
+	private FragmentStatePagerAdapter mAdapter;
 	private List<ImageView> mDots;//底部小圆点的集合
 	private LinearLayout mLinearLayout;
 	private TextView mCityNameTextView;//MainActivty的TextView
@@ -47,7 +48,7 @@ public class MainFragment extends Fragment{
 		mViewPager=(ViewPager)v.findViewById(R.id.id_viewpager);
         mLinearLayout= (LinearLayout)v.findViewById(R.id.viewpager_linerlayout);
 
-		mAdapter = new FragmentPagerAdapter(getChildFragmentManager())
+		mAdapter = new FragmentStatePagerAdapter(getChildFragmentManager())
 		{
 
 			@Override

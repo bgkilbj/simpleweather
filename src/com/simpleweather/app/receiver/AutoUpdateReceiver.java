@@ -12,6 +12,8 @@ public class AutoUpdateReceiver extends BroadcastReceiver {
 	public void onReceive(Context context, Intent intent) {
 		// TODO Auto-generated method stub
 		Intent i = new Intent(context, AutoUpdateService.class);
+	    //intent.addCategory(Intent.CATEGORY_ALTERNATIVE);  
+
 		context.startService(i);
 	}
 

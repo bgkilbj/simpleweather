@@ -108,6 +108,8 @@ public class SettingTab extends Fragment {
 
 	private void startService() {
 		Intent intent = new Intent(getActivity(), AutoUpdateService.class);
+	   // intent.addCategory(Intent.CATEGORY_ALTERNATIVE);  
+
 		getActivity().startService(intent);
 		Log.d("SettingTab", "startService");
 	}

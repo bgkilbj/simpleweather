@@ -33,6 +33,17 @@
 
         <receiver android:name="com.simpleweather.app.receiver.AutoUpdateReceiver" >
         </receiver>
+        <receiver android:name="com.simpleweather.app.receiver.MyAppWidgetProvider" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="my.action.SWITCH_CLICK" />
+                
+                </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info" />
+        </receiver>
     </application>
 
 </manifest>

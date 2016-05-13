@@ -3,7 +3,7 @@ package com.simpleweather.app.util;
 import java.util.List;
 
 import android.content.Context;
-import android.util.Log;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,6 +61,8 @@ public class SlidingMenuListAdapter extends ArrayAdapter<County> {
 			viewHolder = new ViewHolder();
 			viewHolder.mTextView = (TextView) view.findViewById(R.id.sliding_menu_item_textview);
 			viewHolder.mImageButton = (ImageButton) view.findViewById(R.id.sliding_menu_item_imgbutton);
+			viewHolder.mTextView.setTextColor(Color.WHITE);
+			viewHolder.mTextView.setTextSize(23);
 
 			view.setTag(viewHolder); // ½«ViewHolder´æ´¢ÔÚViewÖÐ
 		} else {
